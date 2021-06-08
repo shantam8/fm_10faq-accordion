@@ -9,28 +9,76 @@
 }
 
 body {
-  position: relative;
+  height: 100vh;
   width: 24rem;
   margin: 0 auto;
-  margin-top: 9.125rem;
+  padding-top: 9.125rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(#6565e7), to(#af67e9));
   background-image: linear-gradient(0, #6565e7, #af67e9);
 }
 
-body header {
-  width: 100%;
-  text-align: center;
+@media screen and (min-width: 1200px) {
+  body {
+    width: 57.5rem;
+  }
+}
+
+body .positionHelper {
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  body .positionHelper:after {
+    content: "";
+    position: absolute;
+    top: 13rem;
+    left: -8rem;
+    height: 9rem;
+    width: 12rem;
+    background-image: url("../images/illustration-box-desktop.svg");
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+}
+
+body .positionHelper .card {
+  position: relative;
+  margin: 0 1.5rem 2.875rem 1.5rem;
+  background-color: white;
+  border-radius: 20px;
+  padding: 8.5rem 1.5rem 2.875rem 1.5rem;
+}
+
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card {
+    width: 100%;
+    height: 32.125rem;
+    margin: 0 auto;
+    padding: 4.5rem 6rem 4.5rem 29.875rem;
+    overflow: hidden;
+  }
+}
+
+body .positionHelper .card header {
   position: absolute;
+  width: 30rem;
   top: -6.625rem;
-  left: -1rem;
+  left: 1rem;
   z-index: 1;
 }
 
-body header::after {
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card header {
+    top: 4rem;
+    left: -5rem;
+  }
+}
+
+body .positionHelper .card header::after {
   content: "";
   position: absolute;
   top: 105px;
-  left: 85px;
+  left: 28px;
   right: 0;
   bottom: -10px;
   background-image: url("../images/bg-pattern-mobile.svg");
@@ -38,35 +86,44 @@ body header::after {
   z-index: -1;
 }
 
-body header img {
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card header::after {
+    background-image: url("../images/bg-pattern-desktop.svg");
+    top: -23rem;
+    left: -30.5rem;
+    bottom: -6.25rem;
+  }
+}
+
+body .positionHelper .card header img {
   content: url("../images/illustration-woman-online-mobile.svg");
 }
 
-body .card {
-  margin: 3.5rem 1.5rem 2.875rem 1.5rem;
-  background-color: white;
-  border-radius: 20px;
-  padding: 8.5rem 1.5rem 2.875rem 1.5rem;
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card header img {
+    content: url("../images/illustration-woman-online-desktop.svg");
+  }
 }
 
-body .card h1 {
+body .positionHelper .card h1 {
   margin-bottom: 1.625rem;
   font-size: 1.625rem;
   font-weight: 700;
   text-align: center;
+  text-transform: uppercase;
 }
 
-body .card section {
+body .positionHelper .card section {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid #e7e7e9;
 }
 
-body .card section .title {
+body .positionHelper .card section .title {
   margin-bottom: 0;
 }
 
-body .card section .title a {
+body .positionHelper .card section .title a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,18 +138,18 @@ body .card section .title a {
   transition: margin-bottom 0.5s linear;
 }
 
-body .card section .title a h2 {
+body .positionHelper .card section .title a h2 {
   display: inline;
   font-size: 0.625rem;
   color: #4a4b5e;
 }
 
-body .card section .title a svg {
+body .positionHelper .card section .title a svg {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-body .card section p {
+body .positionHelper .card section p {
   margin-top: 0;
   max-height: 0;
   overflow: hidden;
@@ -102,73 +159,35 @@ body .card section p {
   transition: max-height 1s ease;
 }
 
-body .card section:not(:target) h2 {
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card section:hover a > h2 {
+    color: #f47c57;
+  }
+}
+
+body .positionHelper .card section:not(:target) h2 {
   font-weight: 400;
 }
 
-body .card section:not(:target) svg {
+body .positionHelper .card section:not(:target) svg {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 
-body .card section:target .title {
+body .positionHelper .card section:target .title {
   margin-bottom: 1.125rem;
 }
 
-body .card section:target h2 {
+body .positionHelper .card section:target h2 {
   font-weight: 700;
 }
 
-body .card section:target p {
+body .positionHelper .card section:target p {
   max-height: 100px;
 }
 
-body .card section:target svg {
+body .positionHelper .card section:target svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-}
-
-@-webkit-keyframes turnArrowUp {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
-@keyframes turnArrowUp {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
-@-webkit-keyframes turnArrowDown {
-  from {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes turnArrowDown {
-  from {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
 }
 /*# sourceMappingURL=main.css.map */
