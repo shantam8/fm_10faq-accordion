@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
 }
 
 body {
@@ -13,11 +14,7 @@ body {
   width: 24rem;
   margin: 0 auto;
   margin-top: 9.125rem;
-  background-image: linear-gradient(
-    180deg,
-    hsl(273, 75%, 66%),
-    hsl(240, 73%, 65%)
-  );
+  background-image: linear-gradient(0, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
 
   header {
     width: 100%;
@@ -27,16 +24,16 @@ body {
     left: -1rem;
     z-index: 1;
 
-    &::after{
-        content: "";
-        position: absolute;
-        top: 105px;
-        left: 85px;
-        right: 0;
-        bottom: -10px;
-        background-image: url("../images/bg-pattern-mobile.svg");
-        background-repeat: no-repeat;
-        z-index: -1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 105px;
+      left: 85px;
+      right: 0;
+      bottom: -10px;
+      background-image: url("../images/bg-pattern-mobile.svg");
+      background-repeat: no-repeat;
+      z-index: -1;
     }
 
     img {
@@ -50,12 +47,91 @@ body {
     border-radius: 20px;
     padding: 8.5rem 1.5rem 2.875rem 1.5rem;
 
-    h1{
-        margin-bottom: 1.625rem;
-        font-size: 1.625rem;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
+    h1 {
+      margin-bottom: 1.625rem;
+      font-size: 1.625rem;
+      font-weight: 700;
+      text-align: center;
     }
+
+    section {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid $lightGrayishBlue;
+
+      .title {
+        margin-bottom: 0; // open 1.125rem;
+
+        a{
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-decoration: none;
+          transition: margin-bottom 0.5s linear;
+          
+        h2 {
+          display: inline;
+          font-size: 0.625rem;
+          color: $veryDarkGrayishBlue;
+        }
+        
+        svg {
+          transition: all 0.5s ease;
+        }
+      }
+      }
+
+      p {
+        margin-top: 0; //1.125rem;
+        max-height: 0;
+        overflow: hidden;
+        font-size: 0.625rem;
+        color: $darkGrayishBlue;
+        transition: max-height 1s ease;
+      }
+
+      &:not(:target) {
+        h2 {
+          font-weight: 400;
+        }
+        svg{
+          transform: rotate(0deg);
+        }
+      }
+
+      &:target {
+           .title {
+          margin-bottom: 1.125rem;
+        }
+        h2 {
+          font-weight: 700;
+        }
+           p {
+          //margin-top: 1.125rem;
+          max-height: 100px;
+        }
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+@keyframes turnArrowUp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes turnArrowDown {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
