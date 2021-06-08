@@ -8,6 +8,14 @@
   font-weight: 400;
 }
 
+#toggleCB1,
+#toggleCB2,
+#toggleCB3,
+#toggleCB4,
+#toggleCB5 {
+  display: none;
+}
+
 body {
   height: 100vh;
   width: 24rem;
@@ -15,6 +23,7 @@ body {
   padding-top: 9.125rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(#6565e7), to(#af67e9));
   background-image: linear-gradient(0, #6565e7, #af67e9);
+  overflow: hidden;
 }
 
 @media screen and (min-width: 1200px) {
@@ -52,7 +61,6 @@ body .positionHelper .card {
 @media screen and (min-width: 1200px) {
   body .positionHelper .card {
     width: 100%;
-    height: 32.125rem;
     margin: 0 auto;
     padding: 4.5rem 6rem 4.5rem 29.875rem;
     overflow: hidden;
@@ -69,7 +77,7 @@ body .positionHelper .card header {
 
 @media screen and (min-width: 1200px) {
   body .positionHelper .card header {
-    top: 4rem;
+    top: 3rem;
     left: -5rem;
   }
 }
@@ -91,7 +99,7 @@ body .positionHelper .card header::after {
     background-image: url("../images/bg-pattern-desktop.svg");
     top: -23rem;
     left: -30.5rem;
-    bottom: -6.25rem;
+    bottom: -11rem;
   }
 }
 
@@ -121,9 +129,6 @@ body .positionHelper .card section {
 
 body .positionHelper .card section .title {
   margin-bottom: 0;
-}
-
-body .positionHelper .card section .title a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,19 +139,26 @@ body .positionHelper .card section .title a {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  -webkit-transition: margin-bottom 0.5s linear;
-  transition: margin-bottom 0.5s linear;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
 }
 
-body .positionHelper .card section .title a h2 {
+body .positionHelper .card section .title h2 {
   display: inline;
   font-size: 0.625rem;
   color: #4a4b5e;
 }
 
-body .positionHelper .card section .title a svg {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+body .positionHelper .card section .title svg {
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+}
+
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card section .title:hover h2 {
+    color: #f47c57;
+    cursor: pointer;
+  }
 }
 
 body .positionHelper .card section p {
@@ -155,38 +167,32 @@ body .positionHelper .card section p {
   overflow: hidden;
   font-size: 0.625rem;
   color: #787887;
-  -webkit-transition: max-height 1s ease;
-  transition: max-height 1s ease;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
 }
 
-@media screen and (min-width: 1200px) {
-  body .positionHelper .card section:hover a > h2 {
-    color: #f47c57;
-  }
+body .positionHelper .card section #toggleCB1:checked ~ p,
+body .positionHelper .card section #toggleCB2:checked ~ p,
+body .positionHelper .card section #toggleCB3:checked ~ p,
+body .positionHelper .card section #toggleCB4:checked ~ p,
+body .positionHelper .card section #toggleCB5:checked ~ p {
+  max-height: 100px;
+  margin-top: 1.125rem;
 }
 
-body .positionHelper .card section:not(:target) h2 {
-  font-weight: 400;
-}
-
-body .positionHelper .card section:not(:target) svg {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-body .positionHelper .card section:target .title {
-  margin-bottom: 1.125rem;
-}
-
-body .positionHelper .card section:target h2 {
+body .positionHelper .card section #toggleCB1:checked ~ .title h2,
+body .positionHelper .card section #toggleCB2:checked ~ .title h2,
+body .positionHelper .card section #toggleCB3:checked ~ .title h2,
+body .positionHelper .card section #toggleCB4:checked ~ .title h2,
+body .positionHelper .card section #toggleCB5:checked ~ .title h2 {
   font-weight: 700;
 }
 
-body .positionHelper .card section:target p {
-  max-height: 100px;
-}
-
-body .positionHelper .card section:target svg {
+body .positionHelper .card section #toggleCB1:checked ~ .title svg,
+body .positionHelper .card section #toggleCB2:checked ~ .title svg,
+body .positionHelper .card section #toggleCB3:checked ~ .title svg,
+body .positionHelper .card section #toggleCB4:checked ~ .title svg,
+body .positionHelper .card section #toggleCB5:checked ~ .title svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }

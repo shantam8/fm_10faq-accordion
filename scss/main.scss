@@ -9,12 +9,21 @@
   font-weight: 400;
 }
 
+#toggleCB1,
+#toggleCB2,
+#toggleCB3,
+#toggleCB4,
+#toggleCB5 {
+  display: none;
+}
+
 body {
   height: 100vh;
   width: 24rem;
   margin: 0 auto;
   padding-top: 9.125rem;
   background-image: linear-gradient(0, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+  overflow: hidden;
 
   @media screen and (min-width: 1200px) {
     width: 57.5rem;
@@ -46,7 +55,6 @@ body {
 
       @media screen and (min-width: 1200px) {
         width: 100%;
-        height: 32.125rem;
         margin: 0 auto;
         padding: 4.5rem 6rem 4.5rem 29.875rem;
         overflow: hidden;
@@ -60,7 +68,7 @@ body {
         z-index: 1;
 
         @media screen and (min-width: 1200px) {
-          top: 4rem;
+          top: 3rem;
           left: -5rem;
         }
 
@@ -79,7 +87,7 @@ body {
             background-image: url("../images/bg-pattern-desktop.svg");
             top: -23rem;
             left: -30.5rem;
-            bottom: -6.25rem;
+            bottom: -11rem;
           }
         }
 
@@ -107,22 +115,28 @@ body {
 
         .title {
           margin-bottom: 0; // open 1.125rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-decoration: none;
+          transition: all 1s linear;
 
-          a {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
-            transition: margin-bottom 0.5s linear;
+          h2 {
+            display: inline;
+            font-size: 0.625rem;
+            color: $veryDarkGrayishBlue;
+          }
 
-            h2 {
-              display: inline;
-              font-size: 0.625rem;
-              color: $veryDarkGrayishBlue;
-            }
+          svg {
+            transition: all 1s linear;
+          }
 
-            svg {
-              transition: all 0.5s ease;
+          @media screen and(min-width:1200px) {
+            &:hover {
+              h2 {
+                color: $softRed;
+                cursor: pointer;
+              }
             }
           }
         }
@@ -133,36 +147,25 @@ body {
           overflow: hidden;
           font-size: 0.625rem;
           color: $darkGrayishBlue;
-          transition: max-height 1s ease;
+          transition: all 1s linear;
         }
 
-        @media screen and(min-width:1200px) {
-          &:hover {
-            a > h2 {
-              color: $softRed;
-            }
-          }
+        #toggleCB1:checked ~ p,
+        #toggleCB2:checked ~ p,
+        #toggleCB3:checked ~ p,
+        #toggleCB4:checked ~ p,
+        #toggleCB5:checked ~ p {
+          max-height: 100px;
+          margin-top: 1.125rem;
         }
 
-        &:not(:target) {
-          h2 {
-            font-weight: 400;
-          }
-          svg {
-            transform: rotate(0deg);
-          }
-        }
-
-        &:target {
-          .title {
-            margin-bottom: 1.125rem;
-          }
+        #toggleCB1:checked ~ .title,
+        #toggleCB2:checked ~ .title,
+        #toggleCB3:checked ~ .title,
+        #toggleCB4:checked ~ .title,
+        #toggleCB5:checked ~ .title {
           h2 {
             font-weight: 700;
-          }
-          p {
-            //margin-top: 1.125rem;
-            max-height: 100px;
           }
           svg {
             transform: rotate(180deg);
