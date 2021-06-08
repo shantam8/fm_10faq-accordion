@@ -27,6 +27,7 @@ body {
 
   @media screen and (min-width: 1200px) {
     width: 57.5rem;
+    padding-top: 4rem;
   }
 
   .positionHelper {
@@ -121,10 +122,13 @@ body {
           text-decoration: none;
           transition: all 1s linear;
 
-          h2 {
-            display: inline;
+          span {
             font-size: 0.625rem;
             color: $veryDarkGrayishBlue;
+
+            @media screen and (min-width: 1200px) {
+              font-size: 1rem;
+            }
           }
 
           svg {
@@ -133,7 +137,7 @@ body {
 
           @media screen and(min-width:1200px) {
             &:hover {
-              h2 {
+              span {
                 color: $softRed;
                 cursor: pointer;
               }
@@ -148,6 +152,10 @@ body {
           font-size: 0.625rem;
           color: $darkGrayishBlue;
           transition: all 1s linear;
+
+          @media screen and (min-width: 1200px) {
+            font-size: 0.8rem;
+          }
         }
 
         #toggleCB1:checked ~ p,
@@ -164,7 +172,7 @@ body {
         #toggleCB3:checked ~ .title,
         #toggleCB4:checked ~ .title,
         #toggleCB5:checked ~ .title {
-          h2 {
+          span {
             font-weight: 700;
           }
           svg {

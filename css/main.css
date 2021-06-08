@@ -29,6 +29,7 @@ body {
 @media screen and (min-width: 1200px) {
   body {
     width: 57.5rem;
+    padding-top: 4rem;
   }
 }
 
@@ -143,10 +144,15 @@ body .positionHelper .card section .title {
   transition: all 1s linear;
 }
 
-body .positionHelper .card section .title h2 {
-  display: inline;
+body .positionHelper .card section .title span {
   font-size: 0.625rem;
   color: #4a4b5e;
+}
+
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card section .title span {
+    font-size: 1rem;
+  }
 }
 
 body .positionHelper .card section .title svg {
@@ -155,7 +161,7 @@ body .positionHelper .card section .title svg {
 }
 
 @media screen and (min-width: 1200px) {
-  body .positionHelper .card section .title:hover h2 {
+  body .positionHelper .card section .title:hover span {
     color: #f47c57;
     cursor: pointer;
   }
@@ -171,6 +177,12 @@ body .positionHelper .card section p {
   transition: all 1s linear;
 }
 
+@media screen and (min-width: 1200px) {
+  body .positionHelper .card section p {
+    font-size: 0.8rem;
+  }
+}
+
 body .positionHelper .card section #toggleCB1:checked ~ p,
 body .positionHelper .card section #toggleCB2:checked ~ p,
 body .positionHelper .card section #toggleCB3:checked ~ p,
@@ -180,11 +192,11 @@ body .positionHelper .card section #toggleCB5:checked ~ p {
   margin-top: 1.125rem;
 }
 
-body .positionHelper .card section #toggleCB1:checked ~ .title h2,
-body .positionHelper .card section #toggleCB2:checked ~ .title h2,
-body .positionHelper .card section #toggleCB3:checked ~ .title h2,
-body .positionHelper .card section #toggleCB4:checked ~ .title h2,
-body .positionHelper .card section #toggleCB5:checked ~ .title h2 {
+body .positionHelper .card section #toggleCB1:checked ~ .title span,
+body .positionHelper .card section #toggleCB2:checked ~ .title span,
+body .positionHelper .card section #toggleCB3:checked ~ .title span,
+body .positionHelper .card section #toggleCB4:checked ~ .title span,
+body .positionHelper .card section #toggleCB5:checked ~ .title span {
   font-weight: 700;
 }
 
